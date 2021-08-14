@@ -7,6 +7,9 @@
     "build": "react-scripts build",
     "client:deploy": "sls client deploy --no-config-change --no-policy-change --no-cors-change",
     "client:build:deploy": "yarn build && yarn client:deploy",
+    "deploy": "sls deploy && yarn client:build:deploy",
+    "deploy:update": "yarn client:build:deploy && sls invalidateCloudFrontCache",
+    "domain": "sls domainInfo",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
